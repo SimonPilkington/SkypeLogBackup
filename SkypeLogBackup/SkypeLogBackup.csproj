@@ -57,7 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\AsyncCommandBase.cs" />
+    <Compile Include="Commands\BasicAsyncCommand.cs" />
     <Compile Include="Commands\IAsyncCommand.cs" />
     <Compile Include="Helpers\ProgressHelper.cs" />
     <Compile Include="Helpers\SkypeHelper.cs" />

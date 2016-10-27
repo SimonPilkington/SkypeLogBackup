@@ -73,7 +73,7 @@ namespace SkypeLogBackup.ViewModel
 		public MainViewModel()
         {
 			BackupCommand = new BasicAsyncCommand(BackupCommandAsyncFunc);
-            RestoreCommand = new BasicAsyncCommand(RestoreCommandFunc);
+            RestoreCommand = new BasicAsyncCommand(RestoreCommandAsyncFunc);
 
             var userEnumerator = new UserEnumerator();
             _skypeUsers = new CollectionView(userEnumerator.GetUsers());
@@ -112,7 +112,7 @@ namespace SkypeLogBackup.ViewModel
 			}
 		}
 
-        private async Task RestoreCommandFunc(object _)
+        private async Task RestoreCommandAsyncFunc(object _)
         {
 			if (CheckSkypeRunning())
 				return;
