@@ -12,23 +12,32 @@ namespace SkypeLogBackup.ViewModel
 {
 	public sealed class MainViewModel : ViewModelBase
     {
+		public MainViewModel()
+        {
+			BackupCommand = new BasicAsyncCommand(BackupCommandAsyncFunc);
+            RestoreCommand = new BasicAsyncCommand(RestoreCommandAsyncFunc);
+
+            var userEnumerator = new UserEnumerator();
+            _skypeUsers = new CollectionView(userEnumerator.GetUsers());
+        }
+
 		#region Properties
 		private CollectionView _skypeUsers;
-        public CollectionView SkypeUsers => _skypeUsers;
+		public CollectionView SkypeUsers => _skypeUsers;
 
-        private string _selectedUser;
-        public string SelectedUser
-        {
-            get { return _selectedUser; }
-            set
-            {
-                if (_selectedUser != value)
-                {
-                    _selectedUser = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+		private string _selectedUser;
+		public string SelectedUser
+		{
+			get { return _selectedUser; }
+			set
+			{
+				if (_selectedUser != value)
+				{
+					_selectedUser = value;
+					OnPropertyChanged();
+				}
+			}
+		}
 
 		private bool _operationInProgress;
 		public Visibility ShowProgressBar
@@ -67,17 +76,10 @@ namespace SkypeLogBackup.ViewModel
 
 		#region Commands
 		public BasicAsyncCommand BackupCommand { get; }
-        public BasicAsyncCommand RestoreCommand { get; }
+		public BasicAsyncCommand RestoreCommand { get; }
 		#endregion
 
-		public MainViewModel()
-        {
-			BackupCommand = new BasicAsyncCommand(BackupCommandAsyncFunc);
-            RestoreCommand = new BasicAsyncCommand(RestoreCommandAsyncFunc);
-
-            var userEnumerator = new UserEnumerator();
-            _skypeUsers = new CollectionView(userEnumerator.GetUsers());
-        }
+		#region Command Functions
 
 		private async Task BackupCommandAsyncFunc(object _)
 		{
@@ -148,6 +150,10 @@ namespace SkypeLogBackup.ViewModel
 			}
 		}
 
+		#endregion
+
+		#region Helpers
+
 		private bool CheckSkypeRunning()
 		{
 			if (SkypeHelper.SkypeProcessExists)
@@ -177,6 +183,11 @@ namespace SkypeLogBackup.ViewModel
 			_operationInProgress = value;
 			OnPropertyChanged(nameof(ShowProgressBar));
 			OnPropertyChanged(nameof(ShowUserSelectionComboBox));
+
+			BackupCommand.Enabled = !value;
+			RestoreCommand.Enabled = !value;
 		}
-    }
+
+		#endregion
+	}
 }
