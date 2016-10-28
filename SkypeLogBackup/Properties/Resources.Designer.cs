@@ -22,7 +22,7 @@ namespace SkypeLogBackup.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SkypeLogBackup.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SkypeLogBackup.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace SkypeLogBackup.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace SkypeLogBackup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back up.
+        /// </summary>
+        public static string Backup {
+            get {
+                return ResourceManager.GetString("Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        internal static string Error {
+        public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
             }
@@ -72,7 +81,7 @@ namespace SkypeLogBackup.Properties {
         /// <summary>
         ///   Looks up a localized string similar to This file doesn&apos;t seem to contain a log backup..
         /// </summary>
-        internal static string InvalidBackup {
+        public static string InvalidBackup {
             get {
                 return ResourceManager.GetString("InvalidBackup", resourceCulture);
             }
@@ -81,16 +90,25 @@ namespace SkypeLogBackup.Properties {
         /// <summary>
         ///   Looks up a localized string similar to The logs for this user appear to be corrupted..
         /// </summary>
-        internal static string LogsCorrupted {
+        public static string LogsCorrupted {
             get {
                 return ResourceManager.GetString("LogsCorrupted", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restore.
+        /// </summary>
+        public static string Restore {
+            get {
+                return ResourceManager.GetString("Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This will restore log data for username {0}. Any logs currently existing for that username will be GONE. Is this OK?.
         /// </summary>
-        internal static string RestoreWarning {
+        public static string RestoreWarning {
             get {
                 return ResourceManager.GetString("RestoreWarning", resourceCulture);
             }
@@ -99,7 +117,7 @@ namespace SkypeLogBackup.Properties {
         /// <summary>
         ///   Looks up a localized string similar to This is a message box.
         /// </summary>
-        internal static string ThisIsAMessageBox {
+        public static string ThisIsAMessageBox {
             get {
                 return ResourceManager.GetString("ThisIsAMessageBox", resourceCulture);
             }
@@ -108,16 +126,25 @@ namespace SkypeLogBackup.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Maybe turn Skype off first?.
         /// </summary>
-        internal static string TurnSkypeOff {
+        public static string TurnSkypeOff {
             get {
                 return ResourceManager.GetString("TurnSkypeOff", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User:.
+        /// </summary>
+        public static string UserLabel {
+            get {
+                return ResourceManager.GetString("UserLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Warning.
         /// </summary>
-        internal static string Warning {
+        public static string Warning {
             get {
                 return ResourceManager.GetString("Warning", resourceCulture);
             }

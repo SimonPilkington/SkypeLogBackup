@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodel="clr-namespace:SkypeLogBackup.ViewModel"
+		xmlns:resx="clr-namespace:SkypeLogBackup.Properties"
         mc:Ignorable="d"
-        Title="Skype log backup" Height="125" Width="300">
+        Title="Skype log backup" Height="125" Width="300" ResizeMode="CanMinimize">
     <Window.DataContext>
 		<viewmodel:MainViewModel/>
     </Window.DataContext>
@@ -18,14 +19,14 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-		<Label Content="User:" Grid.Column="0" VerticalAlignment="Top" Visibility="{Binding ShowUserSelectionComboBox}"/>
+		<Label Content="{x:Static resx:Resources.UserLabel}" Grid.Column="0" VerticalAlignment="Top" Visibility="{Binding ShowUserSelectionComboBox}"/>
 		<StackPanel Grid.Column="1" VerticalAlignment="Top">
 			<ComboBox ItemsSource="{Binding SkypeUsers}" SelectedItem="{Binding SelectedUser}" Visibility="{Binding ShowUserSelectionComboBox}"/>
 			<ProgressBar Height="20" Value="{Binding OperationProgress}" Visibility="{Binding ShowProgressBar}"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <Button Content="Back up" Margin="10" Command="{Binding BackupCommand}" VerticalAlignment="Center"/>
-            <Button Content="Restore" Margin="10" Command="{Binding RestoreCommand}" VerticalAlignment="Center"/>
+			<Button Content="{x:Static resx:Resources.Backup}" Margin="10" Command="{Binding BackupCommand}" VerticalAlignment="Center"/>
+			<Button Content="{x:Static resx:Resources.Restore}" Margin="10" Command="{Binding RestoreCommand}" VerticalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>

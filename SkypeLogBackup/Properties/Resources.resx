@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Backup" xml:space="preserve">
+    <value>Back up</value>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
@@ -126,6 +129,9 @@
   <data name="LogsCorrupted" xml:space="preserve">
     <value>The logs for this user appear to be corrupted.</value>
   </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
   <data name="RestoreWarning" xml:space="preserve">
     <value>This will restore log data for username {0}. Any logs currently existing for that username will be GONE. Is this OK?</value>
   </data>
@@ -134,6 +140,9 @@
   </data>
   <data name="TurnSkypeOff" xml:space="preserve">
     <value>Maybe turn Skype off first?</value>
+  </data>
+  <data name="UserLabel" xml:space="preserve">
+    <value>User:</value>
   </data>
   <data name="Warning" xml:space="preserve">
     <value>Warning</value>
