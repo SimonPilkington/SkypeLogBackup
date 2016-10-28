@@ -25,7 +25,7 @@ namespace SkypeLogBackup.BackupLogic
 			Username = GetBackupUsername(_backupFile);
 
 			if (Username == null)
-				throw new SkypeLogBackupException("invalid backup file");		
+				throw new SkypeLogBackupException("invalid backup file");
 		}
 
 		public async Task ExecuteAsync()
@@ -35,7 +35,7 @@ namespace SkypeLogBackup.BackupLogic
 
 		public async Task ExecuteAsync(IProgress<uint> progressReport)
 		{
-			for(int i = 0; i < _backupFile.Entries.Count; i++)
+			for (int i = 0; i < _backupFile.Entries.Count; i++)
 			{
 				var entry = _backupFile.Entries[i];
 

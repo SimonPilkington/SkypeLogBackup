@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 namespace SkypeLogBackup.BackupLogic
 {
 	public class SkypeLogBackupCreator
-    {
+	{
 		private readonly string _targetDirectory;
 		private readonly string _outputPath;
 
 		private readonly Uri _targetDirectoryUri;
 
 		private const string MAIN_DATABSE_PATH = "main.db";
-		
+
 		public SkypeLogBackupCreator(string username, string outputPath)
 		{
 			if (username == null)
@@ -62,7 +62,7 @@ namespace SkypeLogBackup.BackupLogic
 
 				progressReport?.Report(ProgressHelper.ComputeProgressPercentage((uint)i, (uint)subDirectories.Count + 1));
 			}
-			
+
 			foreach (var file in Directory.EnumerateFiles(directoryFullPath))
 			{
 				if (IsDatabaseLock(file))
@@ -89,6 +89,6 @@ namespace SkypeLogBackup.BackupLogic
 			return Uri.UnescapeDataString(result);
 		}
 
-		private bool IsDatabaseLock(string path) => Path.GetExtension(path) == ".lck";		
+		private bool IsDatabaseLock(string path) => Path.GetExtension(path) == ".lck";
 	}
 }

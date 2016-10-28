@@ -11,15 +11,15 @@ using SkypeLogBackup.BackupLogic;
 namespace SkypeLogBackup.ViewModel
 {
 	public sealed class MainViewModel : ViewModelBase
-    {
+	{
 		public MainViewModel()
-        {
+		{
 			BackupCommand = new BasicAsyncCommand(BackupCommandAsyncFunc);
-            RestoreCommand = new BasicAsyncCommand(RestoreCommandAsyncFunc);
+			RestoreCommand = new BasicAsyncCommand(RestoreCommandAsyncFunc);
 
-            var userEnumerator = new UserEnumerator();
-            _skypeUsers = new CollectionView(userEnumerator.GetUsers());
-        }
+			var userEnumerator = new UserEnumerator();
+			_skypeUsers = new CollectionView(userEnumerator.GetUsers());
+		}
 
 		#region Properties
 		private CollectionView _skypeUsers;
@@ -114,8 +114,8 @@ namespace SkypeLogBackup.ViewModel
 			}
 		}
 
-        private async Task RestoreCommandAsyncFunc(object _)
-        {
+		private async Task RestoreCommandAsyncFunc(object _)
+		{
 			if (CheckSkypeRunning())
 				return;
 
